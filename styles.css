@@ -56,3 +56,12 @@ input[type="text"]:focus {
 	border: solid 3px #707070;
 	box-shadow: 0 0 5px 1px #969696;
 }
+
+#vlexo-div {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	text-align: center;
+	font-size: 75%;
+}
