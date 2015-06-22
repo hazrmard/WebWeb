@@ -1,0 +1,58 @@
+﻿* {
+	font-family: 'Open Sans', sans-serif;
+	/* outline: black solid thick; */
+}
+
+#container-div {
+	position: absolute;
+	width: 50%;
+	background-color: white;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	transition: top 0.3s;
+}
+
+#container-div div {
+	position: relative;
+	display: inline-block;
+	margin: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#input-div {
+	width:70%;
+}
+
+#button-div {
+	width: 20%;
+	border-radius: 10px;
+	background-color: red;
+	color: white;
+	transition: all 0.3s;
+}
+
+#button-div:hover{
+	background-color: purple;
+	cursor: pointer;
+}
+
+input[type="text"] {
+/*styles from: http://callmenick.com/post/various-css-input-text-styles */
+	padding: 10px;
+	border: solid 3px #dcdcdc;
+	transition: box-shadow 0.3s, border 0.3s;
+	width: 100%;
+	font-size: 18px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	text-align: center;
+}
+
+input[type="text"]:focus {
+	border: solid 3px #707070;
+	box-shadow: 0 0 5px 1px #969696;
+}
