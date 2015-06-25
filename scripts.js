@@ -34,15 +34,8 @@ function enterAndGo(event){
 
 function extractLinks(url){
 	var $placeholder = $("<div></div>");
-	var contentURI= $text.val() + " a";
+	var contentURI= $text.val();
 	console.log("URI is: " + contentURI);
-	$placeholder.load("grab.php?url="+ contentURI, function(responseText, textStatus, req) {
-		if (textStatus=="error"){
-			$text.effect("bounce",{times:3},300);
-		}
-		else {
-			$container.css("top", "15%");
-			console.log($(this).html());
-		};		
-	});
+	console.log(jQuery.get(contentURI));	
 };
+	
