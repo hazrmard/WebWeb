@@ -67,7 +67,7 @@ function bounceText() {
 
 function slideText() {
 	console.log("slideText called");
-	$container.css({top:"0%", transform: "translateY(-50%)", transform: "translateX(-50%)"});
+	$container.css({top:"0%", transform: "translateX(-50%)"});
 }
 
 function populateTable(data) {
