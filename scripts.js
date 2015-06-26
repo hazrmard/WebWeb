@@ -33,9 +33,34 @@ function enterAndGo(event){
 };
 
 function extractLinks(url){
-	var $placeholder = $("<div></div>");
-	var contentURI= $text.val();
-	console.log("URI is: " + contentURI);
-	console.log(jQuery.get(contentURI));	
+	var url = $text.val();
+	var query = "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent("select * from html where url='" + url) + "%27%20and%20xpath%3D%27%2F%2Fa%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys" ;
+	console.log("URL is: " + url);
+	console.log("query is: " + query);
+	$.getJSON(query, function(data) {
+		try {
+			console.log("Query made.");
+			console.log(data.query.results.a);
+			slideText();
+		}
+		catch(err) {
+			bounceText();
+		}
+		
+		
+	})
+	.fail(function() {
+		bounceText();
+	});	
 };
+
+function bounceText() {
+	console.log("bounceTest called");
+	$text.effect("bounce", {times: 3}, 300);
+}
+
+function slideText() {
+	console.log("slideText called");
+	$container.css({top:"5%", transform: "translateY(-50%)", transform: "translateX(-50%)"});
+}
 	

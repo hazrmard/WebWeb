@@ -5,7 +5,7 @@
 
 #container-div {
 	position: absolute;
-	width: 50%;
+	width: 40%;
 	background-color: white;
 	text-align: center;
 	left: 50%;
@@ -17,13 +17,13 @@
 #container-div div {
 	position: relative;
 	display: inline-block;
-	margin: 20px;
+	margin: 15px;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
 #input-div {
-	width:70%;
+	width:60%;
 }
 
 #button-div {
