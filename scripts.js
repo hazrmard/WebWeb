@@ -74,8 +74,9 @@ function populateTable(data) {
 	console.log("populateTable called.");
 	$container.css("box-shadow", "0px 6px 33px 0px rgba(112,194,224,1)");
 	$table.empty();
-	$table.append("<tr><td><strong>Links<strong></td></tr>");
+	data = filterDistinct(data);
 	console.log(data.length);
+	$table.append("<tr><td><strong>" + data.length + " Links<strong></td></tr>");
 	for (var i=0; i<data.length; i++) {
 		try {
 			if (data[i].href.substring(0,4)=="http") {
@@ -87,5 +88,13 @@ function populateTable(data) {
 		}
 	}
 	$tableDiv.fadeIn(1000);
+}
+
+function filterDistinct(data) {
+	var unique = [];
+	$.each(data, function(i, el) {
+		if($.inArray(el, unique) === -1) unique.push(el);
+	});
+	return unique;
 }
 	
