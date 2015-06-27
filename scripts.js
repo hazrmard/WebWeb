@@ -18,6 +18,7 @@ function go(){
 	console.log("Go function called.");
 	$tableDiv.fadeOut(300);
 	$container.css("box-shadow", "");
+	$("#button-text").text("Loading");
 	extractLinks($text.val());
 };
 
@@ -57,12 +58,14 @@ function extractLinks(url){
 	})
 	.fail(function() {
 		bounceText();
-	});	
+	});
 };
 
 function bounceText() {
 	console.log("bounceText called");
-	$text.effect("bounce", {times: 3}, 300);
+	$.when($text.effect("bounce", {times: 3}, 300)).done(function() {
+		$("#button-text").text("Go");
+	});
 }
 
 function slideText() {
@@ -91,7 +94,9 @@ function populateTable(data) {
 		}
 	}
 	$(".heading").text(numLinks + " Links:");
-	$tableDiv.fadeIn(1000);
+	$.when($tableDiv.fadeIn(1000)).done(function() {
+		$("#button-text").text("Go");
+	});
 }
 
 function filterDistinct(data) {
