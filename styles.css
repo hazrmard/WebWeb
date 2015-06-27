@@ -49,6 +49,14 @@
 	cursor: pointer;
 }
 
+.link-div img {
+	transition: all 0.2s;
+}
+
+.link-div:hover img {
+	transform: scale(1.2);
+}
+
 input[type="text"] {
 /*styles from: http://callmenick.com/post/various-css-input-text-styles */
 	padding: 10px;
