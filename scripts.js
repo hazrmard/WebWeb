@@ -65,6 +65,7 @@ function bounceText() {
 	console.log("bounceText called");
 	$.when($text.effect("bounce", {times: 3}, 300)).done(function() {
 		$("#button-text").text("Go");
+		$container.css({top:"50%", transform: "translate(-50%, -50%)"});
 	});
 }
 
