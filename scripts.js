@@ -76,24 +76,28 @@ function populateTable(data) {
 	$table.empty();
 	data = filterDistinct(data);
 	console.log(data.length);
-	$table.append("<tr><td><strong>" + data.length + " Links<strong></td></tr>");
+	$table.append("<tr><td><strong></strong></td></tr>");
+	$("td strong").addClass("heading");
+	var numLinks = 0;
 	for (var i=0; i<data.length; i++) {
 		try {
-			if (data[i].href.substring(0,4)=="http") {
-				$table.append("<tr><td><a href='" + data[i].href + "'>" + data[i].href + "</a></td></tr>");
+			if (data[i].substring(0,4)=="http") {
+				$table.append("<tr><td><a href='" + data[i] + "'>" + data[i] + "</a></td></tr>");
+				numLinks++;
 			}
 		}
 		catch(err) {
 			console.log(err.message);
 		}
 	}
+	$(".heading").text(numLinks + " Links:");
 	$tableDiv.fadeIn(1000);
 }
 
 function filterDistinct(data) {
 	var unique = [];
 	$.each(data, function(i, el) {
-		if($.inArray(el, unique) === -1) unique.push(el);
+		if($.inArray(el.href, unique) === -1) unique.push(el.href);
 	});
 	return unique;
 }
