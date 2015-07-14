@@ -1,5 +1,6 @@
 # WebWeb
 Mapping links to a site.
 
-This is a jQuery demonstrator project. I am using jQuery to supplement CSS to polish UI. I am also using jQuery to
-generate a link tree from all sites linking to the URL the user provides. I plan to use d3.js to visualize the tree.
+My first project using jQuery.
+
+This project attempts to bypass restrictions due to Same-Origin policy. It uses [YQL - Yahoo Query Language](https://developer.yahoo.com/yql) to extract links from other sites. This way my server does not have to download external site content and waste bandwidth and I do not have to use less robust methods like iFrames to parse sites for links. 
